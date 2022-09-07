@@ -1,4 +1,7 @@
 
+import java.util.ArrayList;
+
+
 
 /**
  *
@@ -10,7 +13,16 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        ArrayList<String> listaLineasArchivo = new ArrayList<String>();
+        TArbolBB arbol =  new TArbolBB();
+        String[] str = ManejadorArchivosGenerico.leerArchivo("src\\claves1.txt");
+        for (String c : str){
+            TElementoAB elem = new TElementoAB(c,"");
+            arbol.insertar(elem);
+            listaLineasArchivo.add(c + " " + TElementoAB.counter) ;
+            System.out.println(c);
+        }
+        ManejadorArchivosGenerico.escribirArchivo("src\\counter.txt", listaLineasArchivo.toArray(new String [0]));
     }
     
 }
