@@ -18,7 +18,11 @@ public class TArbolBB<T> implements IArbolBB<T> {
 
     @Override
     public TElementoAB<T> buscar(Comparable unaEtiqueta) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        if(raiz == null){
+            return null;
+        }else{
+            return raiz.buscarCont(unaEtiqueta);
+        }
     }
 
     @Override
@@ -28,18 +32,31 @@ public class TArbolBB<T> implements IArbolBB<T> {
 
     @Override
     public String inOrden() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        if(raiz == null){
+            return "Arbol vacio";
+        }else{
+            return raiz.inOrden();
+        }
     }
 
     @Override
     public String postOrden() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        if(raiz == null){
+            return "Arbol vacio";
+        }else{
+            return raiz.postOrden();
+        }
     }
 
     @Override
     public void eliminar(Comparable unaEtiqueta) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
+    
+    
+    public boolean esVacio(){
+        return raiz == null;
+    }
+}
 
-       }
 
